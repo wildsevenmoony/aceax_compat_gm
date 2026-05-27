@@ -10,8 +10,8 @@ set "PRIVATE_KEY=D:\ACE3 Arsenal Extended Compats\Private Keys\aceax_compat_gm.b
 set "PUBLIC_KEY=D:\ACE3 Arsenal Extended Compats\Private Keys\aceax_compat_gm.bikey"
 set "PBO=aceax_gm.pbo"
 set "AUTHORITY=aceax_compat_gm"
-set "VERSION=1.0.0.0"
-set "RELEASE_VERSION=1.0.0.0"
+call :ReadVersion
+if errorlevel 1 exit /b %errorlevel%
 
 if /I "%MODE%"=="release" (
     set "OUT=%ROOT%.hemttout\release"
@@ -45,3 +45,13 @@ if /I "%MODE%"=="release" (
     powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%_refresh_release_zip.ps1" -ReleaseVersion "%RELEASE_VERSION%"
     if errorlevel 1 exit /b %errorlevel%
 )
+exit /b 0
+
+:ReadVersion
+for /f "usebackq delims=" %%v in (`powershell -NoProfile -ExecutionPolicy Bypass -Command "$p = Join-Path $env:ROOT '.hemtt\project.toml'; $vals = @{}; $inside = $false; foreach ($line in Get-Content -LiteralPath $p) { $t = $line.Trim(); if ($t -eq '[version]') { $inside = $true; continue }; if ($inside -and $t -match '^\[') { break }; if ($inside -and $t -match '^(major|minor|patch|build)\s*=\s*(\d+)') { $vals[$matches[1]] = $matches[2] } }; foreach ($k in 'major','minor','patch','build') { if (-not $vals.ContainsKey($k)) { $vals[$k] = 0 } }; '{0}.{1}.{2}.{3}' -f $vals.major,$vals.minor,$vals.patch,$vals.build"`) do set "VERSION=%%v"
+for /f "tokens=1-3 delims=." %%a in ("%VERSION%") do set "RELEASE_VERSION=%%a.%%b.%%c"
+if "%VERSION%"=="" (
+    echo Failed to read version from "%ROOT%.hemtt\project.toml"
+    exit /b 1
+)
+exit /b 0
