@@ -1,0 +1,18 @@
+name = "ACE3 Arsenal Extended - Global Mobilisation"
+prefix = "aceax"
+author = "Moony"
+mainprefix = "z"
+sig_version = 3
+
+[version]
+major = 1
+minor = 0
+patch = 0
+build = 0
+git_hash = 0
+
+[files]
+include = [
+    "mod.cpp",
+    "aceax_compat_gm.paa"
+]

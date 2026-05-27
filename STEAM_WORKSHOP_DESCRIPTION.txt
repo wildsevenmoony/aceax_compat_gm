@@ -1,0 +1,27 @@
+[h1]ACE3 Arsenal Extended - Global Mobilisation[/h1]
+
+ACE Arsenal Extended compatibility for the Global Mobilisation - Cold War Germany Creator DLC.
+
+This mod adds ACEAX model, type, camo, and variant groupings for Global Mobilisation gear, making related weapons and equipment appear as compact selections in ACE Arsenal instead of long lists of individual classnames.
+
+[h2]Features[/h2]
+[list]
+[*] ACEAX groupings for Global Mobilisation weapons and equipment.
+[*] Self-contained Global Mobilisation gear families.
+[*] No gameplay balance changes.
+[*] No new assets.
+[/list]
+
+[h2]Requirements[/h2]
+[list]
+[*] CBA
+[*] ACE3
+[*] ACE3 Arsenal Extended
+[*] Global Mobilisation - Cold War Germany Creator DLC
+[/list]
+
+[h2]Notes[/h2]
+This compat was shamelessly created with the help of AI, then manually reviewed, edited, and tested.
+
+[h2]License[/h2]
+Licensed under the Arma Public License - No Derivatives.

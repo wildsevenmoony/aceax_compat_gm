@@ -1,0 +1,2 @@
+[config.math_could_be_unquoted]
+options.ignore = ["text", "name", "displayname", "icontext", "label"]

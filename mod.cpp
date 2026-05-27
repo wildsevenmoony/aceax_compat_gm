@@ -1,0 +1,11 @@
+name = "ACE3 Arsenal Extended - Global Mobilisation";
+author = "Moony";
+description = "ACE Arsenal Extended compatibility for Global Mobilisation.";
+logo = "aceax_compat_gm.paa";
+logoOver = "aceax_compat_gm.paa";
+picture = "aceax_compat_gm.paa";
+tooltip = "ACEAX Compat - Global Mobilisation";
+tooltipOwned = "ACEAX Compat - Global Mobilisation";
+overview = "Adds ACE Arsenal Extended category filters for Global Mobilisation gear.";
+hideName = 0;
+hidePicture = 0;
